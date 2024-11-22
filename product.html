@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header (reuse from index.html) -->
+    <header>
+        <nav>
+            <div class="nav-logo"><a href="index.html">Logo</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#product-details">Products</a></li>
+                <li><a href="index.html#popular-categories">Categories</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-icons">
+                <input type="text" placeholder="Search">
+                <a href="checkout.html" class="cart-icon">Cart</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <a href="index.html">Home</a> > <a href="#">Category</a> > <span>Product Name</span>
+    </nav>
+
+    <!-- Main Product Section -->
+    <main id="product-details">
+        <div class="product-images">
+            <img src="images/placeholder.jpg" alt="Main Product Image" class="main-image">
+            <div class="thumbnail-images">
+                <img src="images/placeholder.jpg" alt="Thumbnail 1">
+                <img src="images/placeholder.jpg" alt="Thumbnail 2">
+                <img src="images/placeholder.jpg" alt="Thumbnail 3">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1>Product Name</h1>
+            <a href="#">Brand</a>
+            <p class="price">$20.00</p>
+            <p class="color">Color: Black</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Related Products Section -->
+        <section id="related-products">
+            <h2>Similar Products</h2>
+            <div class="related-product-grid">
+                <div class="product-card">
+                    <img src="images/placeholder.jpg" alt="Related Product">
+                    <p>Product Name</p>
+                    <p>$20.00</p>
+                </div>
+                <!-- Repeat product cards as necessary -->
+            </div>
+        </section>
+        <div class="product-images">
+            <img id="main-image" src="images/placeholder.jpg" alt="Main Product Image" class="main-image">
+            <div class="thumbnail-images">
+                <img class="thumbnail" data-src="images/thumbnail1.jpg" src="images/thumbnail1.jpg" alt="Thumbnail 1">
+                <img class="thumbnail" data-src="images/thumbnail2.jpg" src="images/thumbnail2.jpg" alt="Thumbnail 2">
+                <img class="thumbnail" data-src="images/thumbnail3.jpg" src="images/thumbnail3.jpg" alt="Thumbnail 3">
+            </div>
+        </div>
+        <script src="script.js"></script>
+
+    </main>
+
+    <!-- Footer (reuse from index.html) -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html">Logo</a>
+            <p>Your trusted store</p>
+        </div>
+        <div class="footer-sections">
+            <div class="footer-contact" id="contact">
+                <h3>Contact</h3>
+                <p>Address: 123 Main St</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-shortcuts">
+                <h3>Shortcuts</h3>
+                <a href="#product-details">Product Details</a>
+                <a href="#related-products">Related Products</a>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://instagram.com">Instagram</a>
+                <a href="https://facebook.com">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

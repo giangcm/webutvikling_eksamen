@@ -1,0 +1,241 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* General Header Styling */
+.custom-header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 250px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.search-bar .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+}
+
+/* Logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Navigation Icons */
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons .icon {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons .icon:hover {
+    color: #007BFF;
+}
+
+
+
+/* Banner Section */
+#banner {
+    padding: 2rem;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.banner-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+/* Product Section */
+#popular-products {
+    padding: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-sections {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+/* Breadcrumb Navigation */
+.breadcrumb {
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Product Page */
+.product-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbnail-images img {
+    width: 80px;
+    margin: 0.5rem;
+}
+
+.product-info {
+    margin-top: 1rem;
+}
+
+.related-product-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+/* Checkout Page */
+#shopping-cart, #personal-info, #delivery-options, #payment {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    margin: 1rem 0;
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.banner-slide {
+    display: none;
+}
+
+.banner-slide.active {
+    display: block;
+}
+.banner-btn:hover, .footer a:hover {
+    background-color: #444;
+    color: #fff;
+}
+* Responsive Design */
+
+@media (min-width: 768px) {
+    /* Header */
+    .header-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    /* Product Page: Images and Info Side by Side */
+    #product-details {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Related Product Grid */
+    .related-product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Checkout Form: Align Inputs for Desktop */
+    #personal-info input[type="text"] {
+        width: 48%; /* Place fields side-by-side */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Footer sections in a row */
+    .footer-sections {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-images, .product-info {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .product-info button {
+        width: 100%;
+    }
+}

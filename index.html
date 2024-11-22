@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netbutikk Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="custom-header">
+        <nav class="header-nav">
+            <!-- Left Section: Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="søk her">
+                <button class="search-button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+    
+            <!-- Center Section: Logo -->
+            <div class="logo">
+                <a href="index.html">Logo</a>
+            </div>
+    
+            <!-- Right Section: Icons -->
+            <div class="nav-icons">
+                <a href="#" class="icon"><i class="fa fa-user"></i></a>
+                <a href="#" class="icon"><i class="fa fa-heart"></i></a>
+                <a href="checkout.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <!-- Main Content -->
+    <main>
+        <!-- Banner Section -->
+        <section id="banner">
+            <div class="banner-slide">
+                <h1>Welcome to Our Shop</h1>
+                <p>Discover our amazing products</p>
+                <a href="#" class="banner-btn">Shop Now</a>
+            </div>
+            <div class="banner-slide">
+                <h1>Special Offer!</h1>
+                <p>50% off on select items</p>
+                <a href="#" class="banner-btn">View Offers</a>
+            </div>
+        </section>
+
+        <!-- Popular Products Section -->
+        <section id="popular-products">
+            <h2>Our Most Popular Products</h2>
+            <div class="products-filter">
+                <button>Filter 1</button>
+                <button>Filter 2</button>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/237/200/300" alt="Product Image">
+                    <p>Product Name</p>
+                    <p>$20.00</p>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </section>
+
+        <!-- Popular Categories Section -->
+        <section id="popular-categories">
+            <h2>Our Most Popular Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <p>Category 1</p>
+                </div>
+                <!-- Add more category cards as needed -->
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review-card">
+                <img src="images/placeholder.jpg" alt="Reviewer Image">
+                <h3>Great Product</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <!-- Add more review cards as needed -->
+        </section>
+        
+        <script>
+            let currentSlide = 0;
+const slides = document.querySelectorAll('.banner-slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Start the slider
+showSlide(currentSlide);
+setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        </script>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html">Logo</a>
+            <p>Your trusted store</p>
+        </div>
+        <div class="footer-sections">
+            <div class="footer-contact" id="contact">
+                <h3>Contact</h3>
+                <p>Address: 123 Main St</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-shortcuts">
+                <h3>Shortcuts</h3>
+                <a href="#banner">Home</a>
+                <a href="#popular-products">Products</a>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://instagram.com">Instagram</a>
+                <a href="https://facebook.com">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
