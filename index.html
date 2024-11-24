@@ -3,136 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netbutikk Homepage</title>
+    <title>Trang Web Hoàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    <!-- Header -->
-    <header class="custom-header">
-        <nav class="header-nav">
-            <!-- Left Section: Search Bar -->
-            <div class="search-bar">
-                <input type="text" placeholder="søk her">
-                <button class="search-button">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
+    <!-- Navbar -->
+    <header class="navbar">
+        <!-- Thanh tìm kiếm và menu bên trái -->
+        <div class="left-section">
+            <input type="text" class="search-bar" placeholder="Søk her">
+            <nav class="menu-left">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="product.html">Produkter</a></li>
+                </ul>
+            </nav>
+        </div>
     
-            <!-- Center Section: Logo -->
-            <div class="logo">
-                <a href="index.html">Logo</a>
-            </div>
+        <!-- Logo ở giữa -->
+        <h1 class="logo">Logo</h1>
     
-            <!-- Right Section: Icons -->
-            <div class="nav-icons">
-                <a href="#" class="icon"><i class="fa fa-user"></i></a>
-                <a href="#" class="icon"><i class="fa fa-heart"></i></a>
-                <a href="checkout.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+        <!-- Menu và icon bên phải -->
+        <div class="right-section">
+            <nav class="menu-right">
+                <ul>
+                    <li><a href="#">Kategorier</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <a href="#"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
             </div>
-        </nav>
+        </div>
     </header>
-    
 
     <!-- Main Content -->
     <main>
-        <!-- Banner Section -->
-        <section id="banner">
-            <div class="banner-slide">
-                <h1>Welcome to Our Shop</h1>
-                <p>Discover our amazing products</p>
-                <a href="#" class="banner-btn">Shop Now</a>
-            </div>
-            <div class="banner-slide">
-                <h1>Special Offer!</h1>
-                <p>50% off on select items</p>
-                <a href="#" class="banner-btn">View Offers</a>
-            </div>
-        </section>
-
-        <!-- Popular Products Section -->
-        <section id="popular-products">
-            <h2>Our Most Popular Products</h2>
-            <div class="products-filter">
-                <button>Filter 1</button>
-                <button>Filter 2</button>
-            </div>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/237/200/300" alt="Product Image">
-                    <p>Product Name</p>
-                    <p>$20.00</p>
+        <section class="image-slider">
+            <div class="slider-container">
+                <div class="slider-item active">
+                    <img src="https://picsum.photos/600/300" alt="Image 1">
+                    <div class="slider-content">
+                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+                        <button class="slider-btn">LES MER</button>
+                    </div>
                 </div>
-                <!-- Add more product cards as needed -->
-            </div>
-        </section>
-
-        <!-- Popular Categories Section -->
-        <section id="popular-categories">
-            <h2>Our Most Popular Categories</h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <p>Category 1</p>
+                <div class="slider-item">
+                    <img src="https://picsum.photos/600/300" alt="Image 2">
+                    <div class="slider-content">
+                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+                        <button class="slider-btn">LES MER</button>
+                    </div>
                 </div>
-                <!-- Add more category cards as needed -->
+                <div class="slider-item">
+                    <img src="https://picsum.photos/600/300" alt="Image 2">
+                    <div class="slider-content">
+                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+                        <button class="slider-btn">LES MER</button>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <img src="https://picsum.photos/600/300" alt="Image 2">
+                    <div class="slider-content">
+                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+                        <button class="slider-btn">LES MER</button>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <img src="https://picsum.photos/600/300" alt="Image 2">
+                    <div class="slider-content">
+                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+                        <button class="slider-btn">LES MER</button>
+                    </div>
+                </div>
             </div>
+            <button class="slider-control prev">←</button>
+            <button class="slider-control next">→</button>
+        </section>
+        <script>const sliderContainer = document.querySelector('.slider-container');
+            const sliderItems = document.querySelectorAll('.slider-item');
+            const prevButton = document.querySelector('.slider-control.prev');
+            const nextButton = document.querySelector('.slider-control.next');
+            
+            let currentIndex = 0;
+            
+            function updateSliderPosition() {
+                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+            
+            function showNextSlide() {
+                currentIndex = (currentIndex + 1) % sliderItems.length;
+                updateSliderPosition();
+            }
+            
+            function showPrevSlide() {
+                currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+                updateSliderPosition();
+            }
+            
+            nextButton.addEventListener('click', showNextSlide);
+            prevButton.addEventListener('click', showPrevSlide);
+            </script>
+        
+        <section class="popular">
+            <section class="popular-products">
+                <h2>Våre mest populære produkter</h2>
+                <p>Oppdag det beste av det beste</p>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">New Product</button>
+                    <button class="filter-btn">Special Price</button>
+                    <button class="filter-btn">Best Sellers</button>
+                </div>
+            </section>
+            <article>
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
+                <h3>Product Name</h3>
+                <p>Kr 1999</p>
+                <p>⭐⭐⭐⭐ 842 Reviews</p>
+            </article>
+            <article>
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
+                <h3>Product Name</h3>
+                <p>Kr 1999</p>
+                <p>⭐⭐⭐⭐ 842 Reviews</p>
+            </article>
+            <article>
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
+                <h3>Product Name</h3>
+                <p>Kr 1999</p>
+                <p>⭐⭐⭐⭐ 842 Reviews</p>
+            </article>
+            <article>
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
+                <h3>Product Name</h3>
+                <p>Kr 1999</p>
+                <p>⭐⭐⭐⭐ 842 Reviews</p>
+            </article>
+            <article>
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
+                <h3>Product Name</h3>
+                <p>Kr 1999</p>
+                <p>⭐⭐⭐⭐ 842 Reviews</p>
+            </article>
+            <article>
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
+                <h3>Product Name</h3>
+                <p>Kr 1999</p>
+                <p>⭐⭐⭐⭐ 842 Reviews</p>
+            </article>
+
+            
         </section>
 
-        <!-- Reviews Section -->
-        <section id="reviews">
-            <h2>Customer Reviews</h2>
-            <div class="review-card">
-                <img src="images/placeholder.jpg" alt="Reviewer Image">
-                <h3>Great Product</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <section class="popular-categories">
+            <div class="container">
+                <h2>Våre mest populære kategorier</h2>
+                <p>Oppdag det beste av det beste</p>
+                <div class="category-grid">
+                    <div class="category-item">CATEGORY 1</div>
+                    <div class="category-item">CATEGORY 2</div>
+                    <div class="category-item">CATEGORY 3</div>
+                    <div class="category-item large">CATEGORY 4</div>
+                    <div class="category-item">CATEGORY 5</div>
+                </div>
             </div>
-            <!-- Add more review cards as needed -->
+        </section>
+        <section class="anmeldelser">
+            <h2>Anmeldelser</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </div>
+                <div class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </div>
+                <div class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </div>
+                <div class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </div>
+            </div>
         </section>
         
-        <script>
-            let currentSlide = 0;
-const slides = document.querySelectorAll('.banner-slide');
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-// Start the slider
-showSlide(currentSlide);
-setInterval(nextSlide, 3000); // Change slide every 3 seconds
-
-        </script>
+        
     </main>
 
+
     <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <a href="index.html">Logo</a>
-            <p>Your trusted store</p>
-        </div>
-        <div class="footer-sections">
-            <div class="footer-contact" id="contact">
-                <h3>Contact</h3>
-                <p>Address: 123 Main St</p>
-                <p>Phone: (123) 456-7890</p>
-            </div>
-            <div class="footer-shortcuts">
-                <h3>Shortcuts</h3>
-                <a href="#banner">Home</a>
-                <a href="#popular-products">Products</a>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <a href="https://instagram.com">Instagram</a>
-                <a href="https://facebook.com">Facebook</a>
-            </div>
-        </div>
+    <footer class="footer">
+        <!-- Logo Section -->
+        <section class="footer-logo">
+            <h2>Logo</h2>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+        </section>
+    
+        <!-- Footer Content (3 cột) -->
+        <section class="footer-grid">
+            <!-- Kontakt -->
+            <section class="footer-contact">
+                <h3>KONTAKT</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse:</strong> B R A Veien 4, 1757 Halden</p>
+                <p><i class="fas fa-phone"></i> <strong>Telefon:</strong> 69 60 80 00</p>
+                <p><i class="fas fa-envelope"></i> <strong>E-post:</strong> halden@hiof.no</p>
+                <p><i class="fas fa-clock"></i> <strong>Åpningstider:</strong> Stenger 15:00</p>
+            </section>
+    
+            <!-- Snarveier -->
+            <section class="footer-links">
+                <h3>SNARVEIER</h3>
+                <ul>
+                    <li><a href="#">Produkter</a></li>
+                    <li><a href="#">Kategorier</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                </ul>
+            </section>
+    
+            <!-- Sosiale Medier -->
+            <section class="footer-social">
+                <h3>SOSIALE MEDIER</h3>
+                <section class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </section>
+            </section>
+        </section>
     </footer>
+    
 </body>
 </html>

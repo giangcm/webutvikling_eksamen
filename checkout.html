@@ -3,128 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Page</title>
+    <title>Kasse</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header (reuse from index.html) -->
-    <header>
-        <nav>
-            <div class="nav-logo"><a href="index.html">Logo</a></div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#popular-products">Products</a></li>
-                <li><a href="index.html#popular-categories">Categories</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
-            </ul>
-            <div class="nav-icons">
-                <input type="text" placeholder="Search">
-                <a href="checkout.html" class="cart-icon">Cart</a>
+    <!-- Navbar -->
+    <header class="navbar">
+        <!-- Thanh tìm kiếm và menu bên trái -->
+        <div class="left-section">
+            <input type="text" class="search-bar" placeholder="Søk her">
+            <nav class="menu-left">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="product.html">Produkter</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Logo ở giữa -->
+        <h1 class="logo">Logo</h1>
+    
+        <!-- Menu và icon bên phải -->
+        <div class="right-section">
+            <nav class="menu-right">
+                <ul>
+                    <li><a href="#">Kategorier</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <a href="#"><i class="fa fa-user"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
             </div>
-        </nav>
+        </div>
+    </header>
+    <header class="checkout-header">
+        <a href="#" class="back-to-shopping">← Fortsett og handle</a>
+        <h2>Kasse</h2>
     </header>
 
-    <!-- Main Checkout Content -->
-    <main id="checkout">
-        <!-- Shopping Cart Section -->
-        <section id="shopping-cart">
-            <h2>Your Shopping Bag</h2>
-            <div class="product-card">
-                <img src="images/placeholder.jpg" alt="Product Image">
-                <p>Product Name</p>
-                <p>Price: $20.00</p>
-                <p>Color: Black</p>
+
+    <!-- Checkout Process -->
+    <main>
+        
+
+        <section class="shopping-bag">
+            <h2>1. SHOPPINGBAGEN DIN</h2>
+        
+            <!-- Product Item -->
+            <div class="product-item">
+                <img src="https://picsum.photos/100/150" alt="Product Image">
+                <div class="product-details">
+                    <h3>PRODUCT NAME</h3>
+                    <p class="price">Kr 1999</p>
+                    <p>Farge: beige</p>
+                    <div class="options">
+                        <label for="size">Størrelse</label>
+                        <select id="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <label for="quantity">Antall</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                    <button class="remove"><i class="fas fa-trash"></i></button>
+                </div>
             </div>
-            <!-- Repeat product cards as necessary -->
+        
+            <!-- Duplicate Product Item (Copy this block for multiple products) -->
+            <div class="product-item">
+                <img src="https://picsum.photos/100/150" alt="Product Image">
+                <div class="product-details">
+                    <h3>PRODUCT NAME</h3>
+                    <p class="price">Kr 1999</p>
+                    <p>Farge: beige</p>
+                    <div class="options">
+                        <label for="size">Størrelse</label>
+                        <select id="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <label for="quantity">Antall</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                    <button class="remove"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+            <!-- Duplicate Product Item (Copy this block for multiple products) -->
+            <div class="product-item">
+                <img src="https://picsum.photos/100/150" alt="Product Image">
+                <div class="product-details">
+                    <h3>PRODUCT NAME</h3>
+                    <p class="price">Kr 1999</p>
+                    <p>Farge: beige</p>
+                    <div class="options">
+                        <label for="size">Størrelse</label>
+                        <select id="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <label for="quantity">Antall</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                    <button class="remove"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
         </section>
-
-        <!-- Personal Details Section -->
-        <section id="personal-info">
-            <h2>Your Details</h2>
+        
+        <section class="customer-info">
+            <h2>2. DINE OPPLYSNINGER</h2>
             <form>
-                <label>First Name</label>
-                <input type="text" name="first-name" required>
-                <label>Last Name</label>
-                <input type="text" name="last-name" required>
-                <label>Address</label>
-                <input type="text" name="address" required>
-                <label>Postal Code</label>
-                <input type="text" name="postal-code" required>
-                <label>City</label>
-                <input type="text" name="city" required>
+                <!-- Leveringsadresse -->
+                <fieldset class="address">
+                    <legend>Leveringsadresse</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">Fornavn</label>
+                            <input type="text" id="firstname" placeholder="Nora*">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Etternavn</label>
+                            <input type="text" id="lastname" placeholder="Nordmann*">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address">Gateadresse</label>
+                            <input type="text" id="address" placeholder="BRA veien 4*">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="zipcode">Postnummer</label>
+                            <input type="text" id="zipcode" placeholder="1752*">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Poststed</label>
+                            <input type="text" id="city" placeholder="Halden*">
+                        </div>
+                    </div>
+                </fieldset>
+        
+                <!-- Kontaktinformasjon -->
+                <fieldset class="contact-info">
+                    <legend>Kontaktinformasjon</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-post</label>
+                            <input type="email" id="email" placeholder="Noranordman@hiof.no.*">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" placeholder="+4749****018">
+                        </div>
+                    </div>
+                </fieldset>
+        
+                <!-- Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="save-btn">Lagre</button>
+                    <a href="#" class="cancel-btn">Avbryt</a>
+                </div>
             </form>
         </section>
+    <section class="shipping-options">
+        <h2>3. LEVERING</h2>
+        <p class="shipping-title">LEVERINGSVALG</p>
+    
+        <!-- Option 1 -->
+        <label class="shipping-option">
+            <input type="radio" name="shipping" checked>
+            <div class="option-content">
+                <div class="option-header">
+                    <span>Express Hjemlevering</span>
+                    <span>59 kr <i class="fas fa-truck"></i></span>
+                </div>
+                <p class="delivery-time">3-4 Virkedager</p>
+                <p class="delivery-description">
+                    bestill hverdag før 08:00* for levering neste arbeidsdag. Leveres hjem til deg før frokost mandag til lørdag. 
+                    *For levering til postnummer 4000-7999 er leveringstiden 2 arbeidsdager, for postnummer 8000-9999 er leveringstiden 3 arbeidsdager.
+                </p>
+            </div>
+        </label>
+    
+        <!-- Option 2 -->
+        <label class="shipping-option">
+            <input type="radio" name="shipping">
+            <div class="option-content">
+                <div class="option-header">
+                    <span>Ekspress Pakke til utleveringssted</span>
+                    <span>59 kr <i class="fas fa-box"></i></span>
+                </div>
+                <p class="delivery-time">1-3 Virkedager</p>
+            </div>
+        </label>
+    
+        <!-- Option 3 -->
+        <label class="shipping-option">
+            <input type="radio" name="shipping">
+            <div class="option-content">
+                <div class="option-header">
+                    <span>Standard Hjemlevering</span>
+                    <span>Gratis <i class="fas fa-shopping-bag"></i></span>
+                </div>
+                <p class="delivery-time">5-8 Virkedager</p>
+                <p class="delivery-description">
+                    Leveres hjem til deg før frokost mandag til lørdag innen 4-7 hverdager.
+                </p>
+            </div>
+        </label>
+    </section>
 
-        <!-- Delivery Options Section -->
-        <section id="delivery-options">
-            <h2>Delivery Options</h2>
-            <label><input type="radio" name="delivery" checked> Express Delivery to Home</label>
-            <label><input type="radio" name="delivery"> Pickup from Store</label>
-            <label><input type="radio" name="delivery"> Standard Home Delivery</label>
-        </section>
-
-        <!-- Payment Section -->
-        <section id="payment">
-            <h2>Payment</h2>
-            <form>
-                <label>Card Number</label>
-                <input type="text" name="card-number" required>
-                <label>Expiry Date</label>
-                <input type="text" name="expiry-date" required>
-                <label>CVC</label>
-                <input type="text" name="cvc" required>
-                <button type="submit">Complete Purchase</button>
-            </form>
-        </section>
-        <form id="checkout-form">
-            <label for="first-name">First Name</label>
-            <input id="first-name" type="text" name="first-name" required>
-            <!-- Other form fields with IDs -->
-            <button type="submit">Complete Purchase</button>
+    <section class="payment">
+        <h2>4. BETALING</h2>
+    
+        <!-- Payment Form -->
+        <form>
+            <fieldset>
+                <legend>BETAL MED KORT <i class="fas fa-credit-card"></i></legend>
+    
+                <div class="form-row">
+                    <!-- Card Number -->
+                    <div class="form-group">
+                        <label for="card-number">Kortnummer</label>
+                        <input type="text" id="card-number" placeholder="342342****4435">
+                    </div>
+    
+                    <!-- Expiry Date -->
+                    <div class="form-group">
+                        <label for="expiry-date">Utløpsdato</label>
+                        <input type="text" id="expiry-date" placeholder="mm / dd / yyyy">
+                    </div>
+    
+                    <!-- CVV -->
+                    <div class="form-group">
+                        <label for="cvv">CVC/CVV</label>
+                        <input type="text" id="cvv" placeholder="CVC/CVV">
+                    </div>
+                </div>
+            </fieldset>
+    
+            <!-- Payment Summary -->
+            <div class="payment-summary">
+                <p>Å betale inkl. mva.</p>
+                <p class="total-price">1 199 kr</p>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="complete-btn">Fullfør kjøp</button>
+    
+            <!-- Terms -->
+            <p class="terms">
+                Du bekrefter herved at opplysningene og dokumentene du har oppgitt er korrekte og fullstendige. 
+                Leverandøren forbeholder seg retten til å heve eller avslutte avtaleforholdet dersom det foreligger uriktige eller ufullstendige opplysninger.
+            </p>
+    
+            <!-- Notifications -->
+            <div class="notifications">
+                <label>
+                    <input type="checkbox">
+                    Ja takk! Send nyhetsbrev til meg.
+                </label>
+                <label>
+                    <input type="checkbox">
+                    Jeg ønsker å motta tekstmeldinger med tilbud og nyheter.
+                </label>
+            </div>
         </form>
-        <div id="error-message" class="error"></div>
-        <script>
-            document.getElementById('checkout-form').addEventListener('submit', function(event) {
-    const firstName = document.getElementById('first-name').value;
-    const errorMessage = document.getElementById('error-message');
-
-    if (firstName === '') {
-        errorMessage.textContent = 'Please fill in all required fields.';
-        event.preventDefault();
-    } else {
-        errorMessage.textContent = '';
-    }
-});
-
-        </script>
-    </main>
-
-    <!-- Footer (reuse from index.html) -->
-    <footer>
-        <div class="footer-logo">
-            <a href="index.html">Logo</a>
-            <p>Your trusted store</p>
-        </div>
-        <div class="footer-sections">
-            <div class="footer-contact" id="contact">
-                <h3>Contact</h3>
-                <p>Address: 123 Main St</p>
-                <p>Phone: (123) 456-7890</p>
-            </div>
-            <div class="footer-shortcuts">
-                <h3>Shortcuts</h3>
-                <a href="#shopping-cart">Shopping Cart</a>
-                <a href="#personal-info">Your Details</a>
-                <a href="#payment">Payment</a>
-                <a href="checkout.html" class="cart-icon" aria-label="Shopping Cart">Cart</a>
-
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <a href="https://instagram.com">Instagram</a>
-                <a href="https://facebook.com">Facebook</a>
-            </div>
-        </div>
+    </section>
+    
+</main>
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Logo Section -->
+        <section class="footer-logo">
+            <h2>Logo</h2>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+        </section>
+    
+        <!-- Footer Content (3 cột) -->
+        <section class="footer-grid">
+            <!-- Kontakt -->
+            <section class="footer-contact">
+                <h3>KONTAKT</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse:</strong> B R A Veien 4, 1757 Halden</p>
+                <p><i class="fas fa-phone"></i> <strong>Telefon:</strong> 69 60 80 00</p>
+                <p><i class="fas fa-envelope"></i> <strong>E-post:</strong> halden@hiof.no</p>
+                <p><i class="fas fa-clock"></i> <strong>Åpningstider:</strong> Stenger 15:00</p>
+            </section>
+    
+            <!-- Snarveier -->
+            <section class="footer-links">
+                <h3>SNARVEIER</h3>
+                <ul>
+                    <li><a href="#">Produkter</a></li>
+                    <li><a href="#">Kategorier</a></li>
+                    <li><a href="#">Kontakt oss</a></li>
+                </ul>
+            </section>
+    
+            <!-- Sosiale Medier -->
+            <section class="footer-social">
+                <h3>SOSIALE MEDIER</h3>
+                <section class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </section>
+            </section>
+        </section>
     </footer>
 </body>
 </html>
