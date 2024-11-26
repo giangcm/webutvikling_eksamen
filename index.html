@@ -11,9 +11,10 @@
 <body>
     <!-- Navbar -->
     <header class="navbar">
+        <input type="text" class="search-bar" placeholder="Søk her">
         <!-- Thanh tìm kiếm và menu bên trái -->
         <div class="left-section">
-            <input type="text" class="search-bar" placeholder="Søk her">
+            
             <nav class="menu-left">
                 <ul>
                     <li><a href="index.html">Hjem</a></li>
@@ -33,61 +34,56 @@
                     <li><a href="#">Kontakt oss</a></li>
                 </ul>
             </nav>
-            <div class="icons">
-                <a href="#"><i class="fa fa-user"></i></a>
-                <a href="#"><i class="fa fa-heart"></i></a>
-                <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+            
+        </div>
+        <div class="icons">
+            <a href="#"><i class="fa fa-user"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
-        <section class="image-slider">
-            <div class="slider-container">
-                <div class="slider-item active">
-                    <img src="https://picsum.photos/600/300" alt="Image 1">
-                    <div class="slider-content">
-                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-                        <button class="slider-btn">LES MER</button>
-                    </div>
-                </div>
-                <div class="slider-item">
-                    <img src="https://picsum.photos/600/300" alt="Image 2">
-                    <div class="slider-content">
-                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-                        <button class="slider-btn">LES MER</button>
-                    </div>
-                </div>
-                <div class="slider-item">
-                    <img src="https://picsum.photos/600/300" alt="Image 2">
-                    <div class="slider-content">
-                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-                        <button class="slider-btn">LES MER</button>
-                    </div>
-                </div>
-                <div class="slider-item">
-                    <img src="https://picsum.photos/600/300" alt="Image 2">
-                    <div class="slider-content">
-                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-                        <button class="slider-btn">LES MER</button>
-                    </div>
-                </div>
-                <div class="slider-item">
-                    <img src="https://picsum.photos/600/300" alt="Image 2">
-                    <div class="slider-content">
-                        <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-                        <button class="slider-btn">LES MER</button>
-                    </div>
-                </div>
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <img src="https://picsum.photos/200/300" alt="Slide 1">
+              <div class="slide-content">
+                <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                <p>Nam libero tempore, cum soluta nobis est eligendi optio...</p>
+                <button>LES MER</button>
+              </div>
             </div>
-            <button class="slider-control prev">←</button>
-            <button class="slider-control next">→</button>
+            <!-- Slide 2 -->
+            <div class="slide">
+              <img src="https://picsum.photos/200/300" alt="Slide 2">
+              <div class="slide-content">
+                <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                <p>Nam libero tempore, cum soluta nobis est eligendi optio...</p>
+                <button>LES MER</button>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+              <img src="https://picsum.photos/200/300" alt="Slide 3">
+              <div class="slide-content">
+                <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
+                <p>Nam libero tempore, cum soluta nobis est eligendi optio...</p>
+                <button>LES MER</button>
+              </div>
+            </div>
+          </div>
+          
+           <!-- Navigation Buttons -->
+        <section class="navigation">
+            <label for="slide1" class="nav prev"></label>
+            <label for="slide2" class="nav next"></label>
+            <label for="slide2" class="nav prev"></label>
+            <label for="slide3" class="nav next"></label>
+            <label for="slide3" class="nav prev"></label>
+            <label for="slide1" class="nav next"></label>
+        </section>
         </section>
         <script>const sliderContainer = document.querySelector('.slider-container');
             const sliderItems = document.querySelectorAll('.slider-item');
@@ -124,12 +120,23 @@
                     <button class="filter-btn">Best Sellers</button>
                 </div>
             </section>
-            <article>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
-                <h3>Product Name</h3>
-                <p>Kr 1999</p>
-                <p>⭐⭐⭐⭐ 842 Reviews</p>
-            </article>
+            <div class="product-card">
+                <div class="image-container">
+                  <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
+                  <label class="heart-icon">
+                    <input type="checkbox" class="heart-checkbox">
+                    <span class="heart"></span>
+                  </label>
+                </div>
+                <div class="product-info">
+                  <h3>Product Name</h3>
+                  <p>Kr 1999</p>
+                  <div class="reviews">
+                    <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
+                  </div>
+                </div>
+              </div>
+              
             <article>
                 <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
                 <h3>Product Name</h3>

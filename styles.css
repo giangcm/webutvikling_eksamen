@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    padding: 50px;
+
 }
 
 .navbar {
@@ -18,7 +18,6 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
-    padding: 10px 20px;
     border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
@@ -123,73 +122,78 @@ body {
     overflow: hidden;
     margin-bottom: 40px;
     
+    
 }
 
+/* Container bao quanh slider */
 .slider-container {
     display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slider-item {
-    min-width: 100%;
-    position: relative;
-}
-
-.slider-item img {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
-
-.slider-content {
+    height: 600px;
+    border-radius: 12px;
+  }
+  
+  /* Các slide */
+  .slide {
+    position: relative;
+    flex: 0 0 100%; /* Mỗi slide chiếm toàn bộ chiều rộng */
+    scroll-snap-align: start;
+    overflow: hidden;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  /* Nội dung trên ảnh */
+  .slide-content {
     position: absolute;
     top: 50%;
     left: 10%;
     transform: translateY(-50%);
-    color: #fff;
-    max-width: 50%;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.slider-content h2 {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .slide-content h2 {
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 10px;
-}
-
-.slider-content p {
-    margin-bottom: 20px;
-}
-
-.slider-btn {
+  }
+  
+  .slide-content p {
+    margin-bottom: 10px;
+  }
+  
+  .slide-content button {
     background-color: black;
     color: white;
+    border: none;
     padding: 10px 20px;
-    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Thanh cuộn tùy chỉnh */
+  .slider-container::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  .slider-container::-webkit-scrollbar-thumb {
+    background: #888;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.slider-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.slider-control.prev {
-    left: 20px;
-}
-
-.slider-control.next {
-    right: 20px;
-}
+  }
+  
+  .slider-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
 /* Phần tiêu đề */
 .popular-products {
     text-align: center;
@@ -237,6 +241,93 @@ body {
     color: #fff;
     border: 2px solid #000;
 }
+/* Navigation Buttons */
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  /* General Styles */
+.product-card {
+    width: 250px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  /* Heart Icon Styles */
+  .heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .heart-checkbox {
+    display: none; /* Hide the checkbox */
+  }
+  
+  .heart {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833300.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  /* Change to red when checked */
+  .heart-checkbox:checked + .heart {
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center;
+    background-size: contain;
+  }
+  
+  /* Add hover effect */
+  .heart:hover {
+    transform: scale(1.1);
+  }
+  
+  .product-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .reviews {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+  }
+  
 
 .popular {
     text-align: center;
@@ -390,7 +481,7 @@ body {
 }
 
 .product img {
-    width: 100px;
+    width: 200px;
     height: auto;
 }
 /* Breadcrumbs */
@@ -1229,6 +1320,7 @@ legend {
     .navbar {
         flex-wrap: wrap;
         text-align: center;
+        font-size: 30px;
     }
 
     .navbar .search-bar {
@@ -1240,6 +1332,16 @@ legend {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+    }
+    .slider-content h2 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .slider-content p {
+        font-size: 6px;
+    }
+    .slider-control-button{
+        display: none;
     }
 
     .product-detail {
