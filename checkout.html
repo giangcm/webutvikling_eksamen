@@ -52,23 +52,22 @@
                     <p class="price">Kr 1999</p>
                     <p>Farge: beige</p>
                     <section class="options">
-                        <label for="size">Størrelse</label>
-                        <select id="size">
+                        <label>Størrelse</label>
+                        <select>
                             <option>S</option>
                             <option>M</option>
                             <option>L</option>
                         </select>
-                        <label for="quantity">Antall</label>
-                        <input type="number" id="quantity" value="1" min="1">
+                        <label>Antall</label>
+                        <input type="number" class ="quantity" value="1" min="1">
+                    </section>
+                    <section class="product-actions">
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                        <button class="remove"><i class="fas fa-trash"></i></button>
                     </section>
                 </section>
-                <section class="product-actions">
-                    <button class="wishlist"><i class="far fa-heart"></i></button>
-                    <button class="remove"><i class="fas fa-trash"></i></button>
-                </section>
+                
             </section>
-
-            
             <section class="product-item">
                 <img src="https://picsum.photos/100/150" alt="Product Image">
                 <section class="product-details">
@@ -76,22 +75,22 @@
                     <p class="price">Kr 1999</p>
                     <p>Farge: beige</p>
                     <section class="options">
-                        <label for="size">Størrelse</label>
-                        <select id="size">
+                        <label>Størrelse</label>
+                        <select>
                             <option>S</option>
                             <option>M</option>
                             <option>L</option>
                         </select>
-                        <label for="quantity">Antall</label>
-                        <input type="number" id="quantity" value="1" min="1">
+                        <label>Antall</label>
+                        <input type="number" class ="quantity" value="1" min="1">
+                    </section>
+                    <section class="product-actions">
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                        <button class="remove"><i class="fas fa-trash"></i></button>
                     </section>
                 </section>
-                <section class="product-actions">
-                    <button class="wishlist"><i class="far fa-heart"></i></button>
-                    <button class="remove"><i class="fas fa-trash"></i></button>
-                </section>
+                
             </section>
-
             <section class="product-item">
                 <img src="https://picsum.photos/100/150" alt="Product Image">
                 <section class="product-details">
@@ -99,23 +98,24 @@
                     <p class="price">Kr 1999</p>
                     <p>Farge: beige</p>
                     <section class="options">
-                        <label for="size">Størrelse</label>
-                        <select id="size">
+                        <label>Størrelse</label>
+                        <select>
                             <option>S</option>
                             <option>M</option>
                             <option>L</option>
                         </select>
-                        <label for="quantity">Antall</label>
-                        <input type="number" id="quantity" value="1" min="1">
+                        <label>Antall</label>
+                        <input type="number" class ="quantity" value="1" min="1">
                     </section>
-                </section>
-                <section class="product-actions">
+                    <section class="product-actions">
                     <button class="wishlist"><i class="far fa-heart"></i></button>
                     <button class="remove"><i class="fas fa-trash"></i></button>
                 </section>
+                </section>
+                
             </section>
         </section>
-
+        
         <section class="customer-info">
             <h2>2. DINE OPPLYSNINGER</h2>
             <form>
@@ -148,7 +148,6 @@
                         </section>
                     </section>
                 </fieldset>
-
                 <fieldset class="contact-info">
                     <legend>Kontaktinformasjon</legend>
                     <section class="form-row">
@@ -162,16 +161,16 @@
                         </section>
                     </section>
                 </fieldset>
-
                 <section class="form-actions">
                     <button type="submit" class="save-btn">Lagre</button>
                     <a href="#" class="cancel-btn">Avbryt</a>
                 </section>
             </form>
         </section>
-
+        
         <section class="shipping-options">
             <h2>3. LEVERING</h2>
+            <p class="shipping-title">LEVERINGSVALG</p>
             <section class="shipping-option">
                 <input type="radio" name="shipping" checked>
                 <section class="option-content">
@@ -180,35 +179,31 @@
                         <span>59 kr <i class="fas fa-truck"></i></span>
                     </section>
                     <p class="delivery-time">3-4 Virkedager</p>
-                    <p class="delivery-description">Bestill hverdag før 08:00* for levering neste arbeidsdag...</p>
                 </section>
             </section>
-            <!-- Option 2 -->
-        <label class="shipping-option">
-            <input type="radio" name="shipping">
-            <section class="option-content">
-                <section class="option-header">
-                    <span>Ekspress Pakke til utleveringssted</span>
-                    <span>59 kr <i class="fas fa-box"></i></span>
+            <section class="shipping-option">
+                <input type="radio" name="shipping">
+                <section class="option-content">
+                    <section class="option-header">
+                        <span>Ekspress Pakke til utleveringssted</span>
+                        <span>59 kr <i class="fas fa-box"></i></span>
+                    </section>
+                    <p class="delivery-time">1-3 Virkedager</p>
                 </section>
-                <p class="delivery-time">1-3 Virkedager</p>
             </section>
-        </label>
-    
-        <!-- Option 3 -->
-        <label class="shipping-option">
-            <input type="radio" name="shipping">
-            <section class="option-content">
-                <section class="option-header">
-                    <span>Standard Hjemlevering</span>
-                    <span>Gratis <i class="fas fa-shopping-bag"></i></span>
+            <section class="shipping-option">
+                <input type="radio" name="shipping">
+                <section class="option-content">
+                    <section class="option-header">
+                        <span>Standard Hjemlevering</span>
+                        <span>Gratis <i class="fas fa-shopping-bag"></i></span>
+                    </section>
+                    <p class="delivery-time">5-8 Virkedager</p>
+                    <p class="delivery-description">
+                        Leveres hjem til deg før frokost mandag til lørdag innen 4-7 hverdager.
+                    </p>
                 </section>
-                <p class="delivery-time">5-8 Virkedager</p>
-                <p class="delivery-description">
-                    Leveres hjem til deg før frokost mandag til lørdag innen 4-7 hverdager.
-                </p>
             </section>
-        </label>
         </section>
 
         <section class="payment">
@@ -236,6 +231,20 @@
                     <p class="total-price">1 199 kr</p>
                 </section>
                 <button type="submit" class="complete-btn">Fullfør kjøp</button>
+                <p class="terms">
+                    Du bekrefter herved at opplysningene og dokumentene du har oppgitt er korrekte og fullstendige. 
+                    Leverandøren forbeholder seg retten til å heve eller avslutte avtaleforholdet dersom det foreligger uriktige eller ufullstendige opplysninger.
+                </p>
+                <section class="notifications">
+                    <label>
+                        <input type="checkbox">
+                        Ja takk! Send nyhetsbrev til meg.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Jeg ønsker å motta tekstmeldinger med tilbud og nyheter.
+                    </label>
+                </section>
             </form>
         </section>
     </main>

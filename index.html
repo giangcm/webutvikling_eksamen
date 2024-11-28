@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="navbar">
+    <header class="navbar" role="banner" aria-label="Hovedmeny">
         <section class="search-bar-container">
-            <input type="text" placeholder="Søk her">
-            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Søk her" aria-label="Søkefelt">
+            <i class="fa fa-search" aria-hidden="true"></i>
         </section>
         <section class="left-section">
             <nav class="menu-left">
@@ -25,7 +25,7 @@
         <section class="right-section">
             <nav class="menu-right">
                 <ul>
-                    <li><a href="#popular">Kategorier</a></li>
+                    <li><a href="#pupular">Kategorier</a></li>
                     <li><a href="#contact">Kontakt oss</a></li>
                 </ul>
             </nav>
@@ -37,8 +37,8 @@
         </section>
     </header>
 
-    <main>
-        <section class="slider-container">
+    <main id="main-content">
+        <section class="slider-container" role="region" aria-labelledby="slider-heading">
             <section class="slider-wrapper">
                 <article class="slide">
                     <img src="https://picsum.photos/900/500?random=1" alt="Slide 1">
@@ -104,7 +104,7 @@
             updateSlider();
         </script>
 
-        <section id="popular" class="popular">
+        <section id="pupular" class="popular">
             <section class="popular-products">
                 <h2>Våre mest populære produkter</h2>
                 <p>Oppdag det beste av det beste</p>
@@ -217,8 +217,8 @@
           </section>
       </section>
         </section>
-
-        <section class="categories-section">
+      </section>
+        <section id="category" class="categories-section">
             <h2>Våre mest populære kategorier</h2>
             <p>Oppdag det beste av det beste</p>
             <section class="categories-container">
@@ -289,13 +289,13 @@
                       Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
                   </p>
               </section>
-            </section>
         </section>
+      </section>
     </main>
 
-    <footer id="contact" class="footer">
+    <footer id="contact" class="footer" role="contentinfo" aria-labelledby="footer-heading">
         <section class="footer-logo">
-            <h2>Logo</h2>
+          <h2 id="footer-heading">Logo</h2>
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
         </section>
         <section class="footer-grid">
@@ -309,9 +309,9 @@
             <section class="footer-links">
                 <h3>SNARVEIER</h3>
                 <ul>
-                    <li><a href="#">Produkter</a></li>
-                    <li><a href="#">Kategorier</a></li>
-                    <li><a href="#">Kontakt oss</a></li>
+                    <li><a href="#pupular">Produkter</a></li>
+                    <li><a href="#category">Kategorier</a></li>
+                    <li><a href="#contact">Kontakt oss</a></li>
                 </ul>
             </section>
             <section class="footer-social">
