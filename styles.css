@@ -141,34 +141,95 @@ header{
 }
 
 .slider-container {
+    width: 100%;
     position: relative;
     overflow: hidden;
-  }
-  
-  .slider-wrapper {
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-wrapper {
     display: flex;
     transition: transform 0.4s ease-in-out;
-  }
-  
-  .slide {
+}
+
+.slide {
     min-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-  }
-  
-  .slider-btn {
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+    font-size: 20px;
+}
+.slide-content h2 {
+    margin: 0;
+
+}
+
+.slide-content p {
+    margin: 10px 0;
+}
+
+.slide-content button {
+    padding: 10px 20px;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
     border: none;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
     cursor: pointer;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.slider-btn.left {
+    left: 10px;
+}
+
+.slider-btn.right {
+    right: 10px;
+}
+
+.slider-btn i {
+    font-size: 1.2em;
+}
+
+.progress-container {
+    width: 100%;
+    background: #f4f4f4;
+    height: 5px;
+    margin-top: 10px;
+    position: relative;
+}
+.progress-bar {
+    height: 5px;
+    width: 0;
+    background: black;
+    transition: width 0.4s ease-in-out;
+}
   
 .popular-products {
     text-align: center;
@@ -1196,17 +1257,16 @@ hr {
         height:300px;
     }
     .navbar {
-        flex-wrap: wrap;
-        text-align: center;
-        font-size: 30px;
+        flex-direction: column;
+        padding: 10px;
     }
-
     .navbar .search-bar {
         width: 100%;
         margin-bottom: 10px;
     }
     .search-bar-container {
-        width: 100%; 
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     .search-bar-container input {
@@ -1375,9 +1435,9 @@ hr {
 
     /* Product Detail */
     .product-card {
-        flex: 1 1 100%; 
-        max-width: 100%;
-      }
+        width: 100%;
+        margin-bottom: 10px;
+    }
     .price {
         font-size: 20px; 
     }
