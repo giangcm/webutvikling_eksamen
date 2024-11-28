@@ -6,237 +6,299 @@
     <title>Trang Web Hoàng</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
-    <!-- Navbar -->
     <header class="navbar">
-        <input type="text" class="search-bar" placeholder="Søk her">
-        <!-- Thanh tìm kiếm và menu bên trái -->
-        <div class="left-section">
-            
+        <section class="search-bar-container">
+            <input type="text" placeholder="Søk her">
+            <i class="fa fa-search"></i>
+        </section>
+        <section class="left-section">
             <nav class="menu-left">
                 <ul>
                     <li><a href="index.html">Hjem</a></li>
                     <li><a href="product.html">Produkter</a></li>
                 </ul>
             </nav>
-        </div>
-    
-        <!-- Logo ở giữa -->
-        <h1 class="logo">Logo</h1>
-    
-        <!-- Menu và icon bên phải -->
-        <div class="right-section">
+        </section>
+        <h1 class="logo"><a href="index.html">Logo</a></h1>
+        <section class="right-section">
             <nav class="menu-right">
                 <ul>
-                    <li><a href="#">Kategorier</a></li>
-                    <li><a href="#">Kontakt oss</a></li>
+                    <li><a href="#popular">Kategorier</a></li>
+                    <li><a href="#contact">Kontakt oss</a></li>
                 </ul>
             </nav>
-            
-        </div>
-        <div class="icons">
+        </section>
+        <section class="icons">
             <a href="#"><i class="fa fa-user"></i></a>
             <a href="#"><i class="fa fa-heart"></i></a>
             <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
-        </div>
+        </section>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <div class="slider-container">
-            <!-- Slide 1 -->
-            <div class="slide">
-              <img src="https://picsum.photos/200/300" alt="Slide 1">
-              <div class="slide-content">
-                <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio...</p>
-                <button>LES MER</button>
-              </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="slide">
-              <img src="https://picsum.photos/200/300" alt="Slide 2">
-              <div class="slide-content">
-                <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio...</p>
-                <button>LES MER</button>
-              </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="slide">
-              <img src="https://picsum.photos/200/300" alt="Slide 3">
-              <div class="slide-content">
-                <h2>Et harum quidem rerum facilis est et expedita distinctio.</h2>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio...</p>
-                <button>LES MER</button>
-              </div>
-            </div>
-          </div>
-          
-           <!-- Navigation Buttons -->
-        <section class="navigation">
-            <label for="slide1" class="nav prev"></label>
-            <label for="slide2" class="nav next"></label>
-            <label for="slide2" class="nav prev"></label>
-            <label for="slide3" class="nav next"></label>
-            <label for="slide3" class="nav prev"></label>
-            <label for="slide1" class="nav next"></label>
+        <section class="slider-container">
+            <section class="slider-wrapper">
+                <article class="slide">
+                    <img src="https://picsum.photos/900/500?random=1" alt="Slide 1">
+                    <div class="slide-content">
+                        <h2>Et harum quidem rerum facilis</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio Nam libero tempore, cum soluta nobis est eligendi optio</p>
+                        <button>LES MER</button>
+                    </div>
+                </article>
+                <article class="slide">
+                    <img src="https://picsum.photos/900/500?random=2" alt="Slide 2">
+                    <div class="slide-content">
+                        <h2>Facilis est et expedita distinctio</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optioNam libero tempore, cum soluta nobis est eligendi optio</p>
+                        <button>LES MER</button>
+                    </div>
+                </article>
+                <article class="slide">
+                    <img src="https://picsum.photos/900/500?random=3" alt="Slide 3">
+                    <div class="slide-content">
+                        <h2>Quidem rerum expedita</h2>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optioNam libero tempore, cum soluta nobis est eligendi optio</p>
+                        <button>LES MER</button>
+                    </div>
+                </article>
+            </section>
+            <button class="slider-btn left"><i class="fa fa-chevron-left"></i></button>
+            <button class="slider-btn right"><i class="fa fa-chevron-right"></i></button>
         </section>
+
+        <section class="progress-container">
+            <div class="progress-bar"></div>
         </section>
-        <script>const sliderContainer = document.querySelector('.slider-container');
-            const sliderItems = document.querySelectorAll('.slider-item');
-            const prevButton = document.querySelector('.slider-control.prev');
-            const nextButton = document.querySelector('.slider-control.next');
-            
+
+        <script>
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.querySelector('.slider-btn.left');
+            const nextButton = document.querySelector('.slider-btn.right');
+            const progressBar = document.querySelector('.progress-bar');
+
             let currentIndex = 0;
-            
-            function updateSliderPosition() {
-                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            function updateSlider() {
+                sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                progressBar.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
             }
-            
-            function showNextSlide() {
-                currentIndex = (currentIndex + 1) % sliderItems.length;
-                updateSliderPosition();
-            }
-            
-            function showPrevSlide() {
-                currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
-                updateSliderPosition();
-            }
-            
-            nextButton.addEventListener('click', showNextSlide);
-            prevButton.addEventListener('click', showPrevSlide);
-            </script>
-        
-        <section class="popular">
+
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < slides.length - 1) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            });
+
+            updateSlider();
+        </script>
+
+        <section id="popular" class="popular">
             <section class="popular-products">
                 <h2>Våre mest populære produkter</h2>
                 <p>Oppdag det beste av det beste</p>
-                <div class="filter-buttons">
+                <section  class="filter-buttons" >
                     <button class="filter-btn active">New Product</button>
                     <button class="filter-btn">Special Price</button>
                     <button class="filter-btn">Best Sellers</button>
-                </div>
+                </section>
             </section>
-            <div class="product-card">
-                <div class="image-container">
+            <section class="product-list">
+                <section class="product-card">
+                    <section class="image-container">
+                        <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
+                        <label class="heart-icon">
+                            <input type="checkbox" class="heart-checkbox">
+                            <span class="heart"></span>
+                        </label>
+                    </section>
+                    <section class="product-info">
+                      <h3><a href="product.html">Product Name</a></h3>
+                        <p>Kr 1999</p>
+                        <section class="reviews">
+                            <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
+                        </section>
+                    </section>
+                </section>
+                
+                <section class="product-card">
+                  <section class="image-container">
+                      <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
+                      <label class="heart-icon">
+                          <input type="checkbox" class="heart-checkbox">
+                          <span class="heart"></span>
+                      </label>
+                  </section>
+                  <section class="product-info">
+                    <h3><a href="product.html">Product Name</a></h3>
+                      <p>Kr 1999</p>
+                      <section class="reviews">
+                          <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
+                      </section>
+                  </section>
+              </section>
+
+              <section class="product-card">
+                <section class="image-container">
+                    <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
+                    <label class="heart-icon">
+                        <input type="checkbox" class="heart-checkbox">
+                        <span class="heart"></span>
+                    </label>
+                </section>
+                <section class="product-info">
+                  <h3><a href="product.html">Product Name</a></h3>
+                    <p>Kr 1999</p>
+                    <section class="reviews">
+                        <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
+                    </section>
+                </section>
+            </section>
+        
+            <section class="product-card">
+              <section class="image-container">
                   <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
                   <label class="heart-icon">
+                      <input type="checkbox" class="heart-checkbox">
+                      <span class="heart"></span>
+                  </label>
+              </section>
+              <section class="product-info">
+                <h3><a href="product.html">Product Name</a></h3>
+                  <p>Kr 1999</p>
+                  <section class="reviews">
+                      <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
+                  </section>
+              </section>
+          </section>
+
+          <section class="product-card">
+            <section class="image-container">
+                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
+                <label class="heart-icon">
                     <input type="checkbox" class="heart-checkbox">
                     <span class="heart"></span>
-                  </label>
-                </div>
-                <div class="product-info">
-                  <h3>Product Name</h3>
-                  <p>Kr 1999</p>
-                  <div class="reviews">
+                </label>
+            </section>
+            <section class="product-info">
+              <h3><a href="product.html">Product Name</a></h3>
+                <p>Kr 1999</p>
+                <section class="reviews">
                     <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
-                  </div>
-                </div>
-              </div>
-              
-            <article>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
-                <h3>Product Name</h3>
-                <p>Kr 1999</p>
-                <p>⭐⭐⭐⭐ 842 Reviews</p>
-            </article>
-            <article>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
-                <h3>Product Name</h3>
-                <p>Kr 1999</p>
-                <p>⭐⭐⭐⭐ 842 Reviews</p>
-            </article>
-            <article>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
-                <h3>Product Name</h3>
-                <p>Kr 1999</p>
-                <p>⭐⭐⭐⭐ 842 Reviews</p>
-            </article>
-            <article>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
-                <h3>Product Name</h3>
-                <p>Kr 1999</p>
-                <p>⭐⭐⭐⭐ 842 Reviews</p>
-            </article>
-            <article>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="Product">
-                <h3>Product Name</h3>
-                <p>Kr 1999</p>
-                <p>⭐⭐⭐⭐ 842 Reviews</p>
-            </article>
-
-            
+                </section>
+            </section>
         </section>
 
-        <section class="popular-categories">
-            <div class="container">
-                <h2>Våre mest populære kategorier</h2>
-                <p>Oppdag det beste av det beste</p>
-                <div class="category-grid">
-                    <div class="category-item">CATEGORY 1</div>
-                    <div class="category-item">CATEGORY 2</div>
-                    <div class="category-item">CATEGORY 3</div>
-                    <div class="category-item large">CATEGORY 4</div>
-                    <div class="category-item">CATEGORY 5</div>
-                </div>
-            </div>
+        <section class="product-card">
+          <section class="image-container">
+              <img src="https://picsum.photos/seed/picsum/200/300" alt="Product Name">
+              <label class="heart-icon">
+                  <input type="checkbox" class="heart-checkbox">
+                  <span class="heart"></span>
+              </label>
+          </section>
+          <section class="product-info">
+            <h3><a href="product.html">Product Name</a></h3>
+              <p>Kr 1999</p>
+              <section class="reviews">
+                  <span>⭐⭐⭐⭐⭐</span> <span>842 Reviews</span>
+              </section>
+          </section>
+      </section>
         </section>
+
+        <section class="categories-section">
+            <h2>Våre mest populære kategorier</h2>
+            <p>Oppdag det beste av det beste</p>
+            <section class="categories-container">
+                <section class="category-box category-1">CATEGORY 1</section>
+                <section class="category-box category-2">CATEGORY 2</section>
+                <section class="category-box category-3">CATEGORY 3</section>
+                <section class="category-box category-4">CATEGORY 4</section>
+                <section class="category-box category-5">CATEGORY 5</section>
+            </section>
+        </section>
+
         <section class="anmeldelser">
             <h2>Anmeldelser</h2>
-            <div class="reviews-container">
-                <div class="review-card">
-                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                    <h3>Rober Labrador</h3>
-                    <div class="stars">⭐⭐⭐⭐☆</div>
-                    <p>
-                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                    </p>
-                </div>
-                <div class="review-card">
-                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                    <h3>Rober Labrador</h3>
-                    <div class="stars">⭐⭐⭐⭐☆</div>
-                    <p>
-                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                    </p>
-                </div>
-                <div class="review-card">
-                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                    <h3>Rober Labrador</h3>
-                    <div class="stars">⭐⭐⭐⭐☆</div>
-                    <p>
-                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                    </p>
-                </div>
-                <div class="review-card">
-                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                    <h3>Rober Labrador</h3>
-                    <div class="stars">⭐⭐⭐⭐☆</div>
-                    <p>
-                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                    </p>
-                </div>
-            </div>
+            <section class="reviews-container">
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+              <section class="review-card">
+                  <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                  <h3>Rober Labrador</h3>
+                  <section class="stars">⭐⭐⭐⭐☆</section>
+                  <p>
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                  </p>
+              </section>
+            </section>
         </section>
-        
-        
     </main>
 
-
-    <!-- Footer -->
-    <footer class="footer">
-        <!-- Logo Section -->
+    <footer id="contact" class="footer">
         <section class="footer-logo">
             <h2>Logo</h2>
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
         </section>
-    
-        <!-- Footer Content (3 cột) -->
         <section class="footer-grid">
-            <!-- Kontakt -->
             <section class="footer-contact">
                 <h3>KONTAKT</h3>
                 <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse:</strong> B R A Veien 4, 1757 Halden</p>
@@ -244,8 +306,6 @@
                 <p><i class="fas fa-envelope"></i> <strong>E-post:</strong> halden@hiof.no</p>
                 <p><i class="fas fa-clock"></i> <strong>Åpningstider:</strong> Stenger 15:00</p>
             </section>
-    
-            <!-- Snarveier -->
             <section class="footer-links">
                 <h3>SNARVEIER</h3>
                 <ul>
@@ -254,8 +314,6 @@
                     <li><a href="#">Kontakt oss</a></li>
                 </ul>
             </section>
-    
-            <!-- Sosiale Medier -->
             <section class="footer-social">
                 <h3>SOSIALE MEDIER</h3>
                 <section class="social-icons">
@@ -267,6 +325,5 @@
             </section>
         </section>
     </footer>
-    
 </body>
 </html>

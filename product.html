@@ -9,147 +9,182 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <!-- Navbar -->
-        <header class="navbar">
-            <!-- Thanh tìm kiếm và menu bên trái -->
-            <div class="left-section">
-                <input type="text" class="search-bar" placeholder="Søk her">
-                <nav class="menu-left">
-                    <ul>
-                        <li><a href="index.html">Hjem</a></li>
-                        <li><a href="product.html">Produkter</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="navbar">
+        <section class="search-bar-container">
+            <input type="text" placeholder="Søk her">
+            <i class="fa fa-search"></i>
+        </section>
+
+        <section class="left-section">
+            <nav class="menu-left">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="product.html">Produkter</a></li>
+                </ul>
+            </nav>
+        </section>
         
-            <!-- Logo ở giữa -->
-            <h1 class="logo">Logo</h1>
-        
-            <!-- Menu và icon bên phải -->
-            <div class="right-section">
-                <nav class="menu-right">
-                    <ul>
-                        <li><a href="#">Kategorier</a></li>
-                        <li><a href="#">Kontakt oss</a></li>
-                    </ul>
-                </nav>
-                <div class="icons">
-                    <a href="#"><i class="fa fa-user"></i></a>
-                    <a href="#"><i class="fa fa-heart"></i></a>
-                    <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
-                </div>
-            </div>
-        </header>
-    <!-- Breadcrumb -->
+        <h1 class="logo"><a href="index.html">Logo</a></h1>
+
+        <section class="right-section">
+            <nav class="menu-right">
+                <ul>
+                    <li><a href="#popular">Kategorier</a></li>
+                    <li><a href="#contact">Kontakt oss</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="icons">
+            <a href="#"><i class="fa fa-user"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
+        </section>
+    </header>
+
     <nav class="breadcrumb">
         <a href="#">Hjem</a> > <a href="#">Kategori</a> > <span>Produktnavn</span>
     </nav>
 
-    <!-- Product Section -->
-    <main class="product-container">
-        <!-- Product Gallery -->
-        <section class="product-gallery">
-            <img src="https://picsum.photos/200" alt="Thumbnail 1">
-            <img src="https://picsum.photos/200" alt="Thumbnail 2">
-            <img src="https://picsum.photos/200" alt="Thumbnail 3">
+    <main>
+        <section class="product-container">
+            <section class="product-gallery">
+                <img src="https://picsum.photos/200" alt="Thumbnail 1">
+                <img src="https://picsum.photos/200" alt="Thumbnail 2">
+                <img src="https://picsum.photos/200" alt="Thumbnail 3">
+            </section>
+
+            <section class="product-main-image">
+                <img src="https://picsum.photos/200/350" alt="Main Product Image">
+            </section>
+
+            <section class="product-details">
+                <h1>Produktnavn</h1>
+                <h2 class="brand">MERKENAVN</h2>
+                <p class="price">5 195 kr inkl. mva.</p>
+                <p><strong>Farge:</strong> beige</p>
+
+                <select>
+                    <option>Velg størrelse</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+
+                <section class="action-container">
+                    <button class="add-to-cart">LEGG I HANDLEKURV</button>
+                    <button class="wishlist"><i class="fa fa-heart"></i></button>
+                </section>
+
+                <hr>
+
+                <section class="additional-info">
+                    <details>
+                        <summary>Materiale og vedlikehold</summary>
+                        <p>Informasjon om materialer og vedlikehold.</p>
+                    </details>
+                    <details>
+                        <summary>Produktdetaljer</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    </details>
+                    <details>
+                        <summary>Størrelsestabell</summary>
+                        <p>Lorem ipsum dolor sit amet...</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>EU</th>
+                                    <th>INT</th>
+                                    <th>BRYSTVIDDE (cm)</th>
+                                    <th>LIVVIDDE (cm)</th>
+                                    <th>HOFTEMÅL (cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table content -->
+                            </tbody>
+                        </table>
+                    </details>
+                    <details>
+                        <summary>Anmeldelser</summary>
+                        <p>⭐⭐⭐⭐☆ 32</p>
+                    </details>
+                </section>
+            </section>
         </section>
 
-        <!-- Main Product Image -->
-        <section class="product-main-image">
-            <img src="https://picsum.photos/200/300" alt="Main Product Image">
-        </section>
-
-        <!-- Product Details -->
-        <section class="product-details">
-            <h1>Produktnavn</h1>
-            <h2 class="brand">MERKENAVN</h2>
-            <p class="price">5 195 kr inkl. mva.</p>
-            <p><strong>Farge:</strong> beige</p>
-        
-            <select>
-                <option>Velg størrelse</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-            </select>
-        
-            <button class="add-to-cart">Legg i handlekurv</button>
-            <button class="wishlist"><i class="far fa-heart"></i></button>
-        
-            <hr>
-        
-            <div class="additional-info">
-                <details>
-                    <summary>Materiale og vedlikehold</summary>
-                    <p>Informasjon om materialer og vedlikehold.</p>
-                </details>
-                <details>
-                    <summary>Produktdetaljer</summary>
-                    <p>Detaljert beskrivelse av produktet.</p>
-                </details>
-                <details>
-                    <summary>Størrelsestabell</summary>
-                    <p>Informasjon om størrelsene.</p>
-                </details>
-                <details>
-                    <summary>Anmeldelser</summary>
-                    <p>⭐⭐⭐⭐☆ 32</p>
-                </details>
-            </div>
-        
-            
+        <section class="related-products">
+            <h2>Lignende produkter</h2>
+            <section class="reviews-container">
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+                <section class="review-card">
+                    <img src="https://via.placeholder.com/80" alt="Profile Picture">
+                    <h3>Rober Labrador</h3>
+                    <section class="stars">⭐⭐⭐⭐☆</section>
+                    <p>
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                    </p>
+                </section>
+            </section>
         </section>
     </main>
 
-    <!-- Related Products -->
-    <section class="related-products">
-        <h2>Lignende produkter</h2>
-        <div class="reviews-container">
-            <div class="review-card">
-                <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                <h3>Rober Labrador</h3>
-                <div class="stars">⭐⭐⭐⭐☆</div>
-                <p>
-                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                </p>
-            </div>
-            <div class="review-card">
-                <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                <h3>Rober Labrador</h3>
-                <div class="stars">⭐⭐⭐⭐☆</div>
-                <p>
-                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                </p>
-            </div>
-            <div class="review-card">
-                <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                <h3>Rober Labrador</h3>
-                <div class="stars">⭐⭐⭐⭐☆</div>
-                <p>
-                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                </p>
-            </div>
-            <div class="review-card">
-                <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                <h3>Rober Labrador</h3>
-                <div class="stars">⭐⭐⭐⭐☆</div>
-                <p>
-                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <!-- Logo Section -->
+    <hr>
+
+    <footer id="contact" class="footer">
         <section class="footer-logo">
             <h2>Logo</h2>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+            <p>At vero eos et accusamus et iusto odio dignissimos...</p>
         </section>
-    
-        <!-- Footer Content (3 cột) -->
+
         <section class="footer-grid">
-            <!-- Kontakt -->
             <section class="footer-contact">
                 <h3>KONTAKT</h3>
                 <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse:</strong> B R A Veien 4, 1757 Halden</p>
@@ -157,8 +192,7 @@
                 <p><i class="fas fa-envelope"></i> <strong>E-post:</strong> halden@hiof.no</p>
                 <p><i class="fas fa-clock"></i> <strong>Åpningstider:</strong> Stenger 15:00</p>
             </section>
-    
-            <!-- Snarveier -->
+
             <section class="footer-links">
                 <h3>SNARVEIER</h3>
                 <ul>
@@ -167,8 +201,7 @@
                     <li><a href="#">Kontakt oss</a></li>
                 </ul>
             </section>
-    
-            <!-- Sosiale Medier -->
+
             <section class="footer-social">
                 <h3>SOSIALE MEDIER</h3>
                 <section class="social-icons">
