@@ -9,12 +9,12 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="navbar">
-        <section class="search-bar-container">
-            <input type="text" placeholder="Søk her">
+    <header class="navbar" itemscope itemtype="http://schema.org/WPHeader">
+        <section class="search-bar-container" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+          <meta itemprop="target" content="/search?q={search_term_string}" />
+            <input type="text" placeholder="Søk her" aria-label="Søk etter produkter" >
             <i class="fa fa-search"></i>
         </section>
-
         <section class="left-section">
             <nav class="menu-left">
                 <ul>
@@ -23,24 +23,23 @@
                 </ul>
             </nav>
         </section>
-        
         <h1 class="logo"><a href="index.html">Logo</a></h1>
-
         <section class="right-section">
             <nav class="menu-right">
                 <ul>
-                    <li><a href="#popular">Kategorier</a></li>
+                    <li><a href="#pupular">Kategorier</a></li>
                     <li><a href="#contact">Kontakt oss</a></li>
                 </ul>
             </nav>
         </section>
-
         <section class="icons">
             <a href="#"><i class="fa fa-user"></i></a>
             <a href="#"><i class="fa fa-heart"></i></a>
             <a href="checkout.html"><i class="fa fa-shopping-cart"></i></a>
         </section>
+      </section>
     </header>
+   
 
     <nav class="breadcrumb" aria-label="breadcrumb">
         <a href="index.html">Hjem</a> > <a href="#pupular">Kategori</a> > <span>Produktnavn</span>
@@ -293,44 +292,62 @@
                 </section>
             </section>
         </section>
+        <!-- Hopp til toppen -->
+        <a href="index.html" class="back-to-top" aria-label="Hopp til toppen">↑</a>
+        <script>
+            // Lấy phần tử nút "back-to-top"
+            const backToTopButton = document.querySelector('.back-to-top');
+        
+            // Kiểm tra vị trí cuộn để hiện/ẩn nút
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { // Hiển thị nút nếu cuộn xuống hơn 300px
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+        
+            // Cuộn về đầu trang khi nhấp vào nút
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
     </main>
 
     <hr>
 
-    <footer id="contact" class="footer">
-        <section class="footer-logo">
-            <h2>Logo</h2>
-            <p>At vero eos et accusamus et iusto odio dignissimos...</p>
+    <footer id="contact" class="footer" itemscope itemtype="http://schema.org/WPFooter">
+        <section class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+            <h2 itemprop="name">Logo</h2>
+            <p itemprop="description" >At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
         </section>
-
-        <section class="footer-grid">
+          <section class="footer-grid">
             <section class="footer-contact">
-                <h3>KONTAKT</h3>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse:</strong> B R A Veien 4, 1757 Halden</p>
-                <p><i class="fas fa-phone"></i> <strong>Telefon:</strong> 69 60 80 00</p>
-                <p><i class="fas fa-envelope"></i> <strong>E-post:</strong> halden@hiof.no</p>
-                <p><i class="fas fa-clock"></i> <strong>Åpningstider:</strong> Stenger 15:00</p>
-            </section>
-
-            <section class="footer-links">
-                <h3>SNARVEIER</h3>
-                <ul>
-                    <li><a href="#">Produkter</a></li>
-                    <li><a href="#">Kategorier</a></li>
-                    <li><a href="#">Kontakt oss</a></li>
-                </ul>
-            </section>
-
-            <section class="footer-social">
+              <h3 itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">KONTAKT</h3>
+              <p><i class="fas fa-map-marker-alt"></i><strong itemprop="addressLocality">Adresse:</strong> B R A Veien 4, 1757 Halden</p>
+              <p><i class="fas fa-phone"></i> <strong itemprop="telephoneNumber">Telefon:</strong> 69 60 80 00</p>
+              <p><i class="fas fa-envelope"></i> <strong itemprop="emailAddress">E-post:</strong> halden@hiof.no</p>
+              <p><i class="fas fa-clock"></i> <strong itemprop="openTime">Åpningstider:</strong> Stenger 15:00</p>
+          </section>
+              <section class="footer-links">
+                  <h3>SNARVEIER</h3>
+                  <ul>
+                      <li><a href="#pupular">Produkter</a></li>
+                      <li><a href="#category">Kategorier</a></li>
+                      <li><a href="#contact">Kontakt oss</a></li>
+                  </ul>
+              </section>
+              <section class="footer-social">
                 <h3>SOSIALE MEDIER</h3>
                 <section class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.instagram.com" itemprop="sameAs"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com" itemprop="sameAs"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com" itemprop="sameAs"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.pinterest.com" itemprop="sameAs"><i class="fab fa-pinterest"></i></a>
                 </section>
             </section>
-        </section>
-    </footer>
+          </section>
+      </footer>
 </body>
 </html>
