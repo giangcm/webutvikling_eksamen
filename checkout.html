@@ -60,8 +60,44 @@
                             <option>M</option>
                             <option>L</option>
                         </select>
-                        <label>Antall</label>
-                        <input type="number" class ="quantity" value="1" min="1">
+                        <section class="quantity-container" data-id="1">
+                            <label for="quantity-1">Antall</label>
+                            <section class="quantity-buttons">
+                                <button type="button" class="btn-decrement">−</button>
+                                <input type="number" class="quantity-input" name="quantity" min="1" max="100" value="1">
+                                <button type="button" class="btn-increment">+</button>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="product-actions">
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                        <button class="remove"><i class="fas fa-trash"></i></button>
+                    </section>
+                </section>
+                   
+            </section>
+            <section class="product-item-1">
+                <img src="image/image.png" alt="Product Image">
+                <section class="product-details">
+                    <h3>PRODUCT NAME</h3>
+                    <p class="price">Kr 1999</p>
+                    <p>Farge: beige</p>
+                    <section class="options">
+                        <label>Størrelse</label>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <section class="quantity-container" data-id="1">
+                            <label for="quantity-1">Antall</label>
+                            <section class="quantity-buttons">
+                                <button type="button" class="btn-decrement">−</button>
+                                <input type="number" class="quantity-input" name="quantity" min="1" max="100" value="1">
+                                <button type="button" class="btn-increment">+</button>
+                            </section>
+                        </section>
+                    
                     </section>
                     <section class="product-actions">
                         <button class="wishlist"><i class="far fa-heart"></i></button>
@@ -83,31 +119,14 @@
                             <option>M</option>
                             <option>L</option>
                         </select>
-                        <label>Antall</label>
-                        <input type="number" class ="quantity" value="1" min="1">
-                    </section>
-                    <section class="product-actions">
-                        <button class="wishlist"><i class="far fa-heart"></i></button>
-                        <button class="remove"><i class="fas fa-trash"></i></button>
-                    </section>
-                </section>
-                
-            </section>
-            <section class="product-item-1">
-                <img src="image/image.png" alt="Product Image">
-                <section class="product-details">
-                    <h3>PRODUCT NAME</h3>
-                    <p class="price">Kr 1999</p>
-                    <p>Farge: beige</p>
-                    <section class="options">
-                        <label>Størrelse</label>
-                        <select>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                        </select>
-                        <label>Antall</label>
-                        <input type="number" class ="quantity" value="1" min="1">
+                        <section class="quantity-container" data-id="1">
+                            <label for="quantity-1">Antall</label>
+                            <section class="quantity-buttons">
+                                <button type="button" class="btn-decrement">−</button>
+                                <input type="number" class="quantity-input" name="quantity" min="1" max="100" value="1">
+                                <button type="button" class="btn-increment">+</button>
+                            </section>
+                        </section>
                     </section>
                     <section class="product-actions">
                     <button class="wishlist"><i class="far fa-heart"></i></button>
@@ -117,7 +136,33 @@
                 
             </section>
         </section>
-        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const quantityContainers = document.querySelectorAll('.quantity-container');
+
+    quantityContainers.forEach(container => {
+        const decrementButton = container.querySelector('.btn-decrement');
+        const incrementButton = container.querySelector('.btn-increment');
+        const quantityInput = container.querySelector('.quantity-input');
+
+        // Giảm số lượng
+        decrementButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > parseInt(quantityInput.min)) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        // Tăng số lượng
+        incrementButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue < parseInt(quantityInput.max)) {
+                quantityInput.value = currentValue + 1;
+            }
+        });
+    });
+});
+        </script>
         <section class="customer-info">
             <h2>2. DINE OPPLYSNINGER</h2>
             <form>

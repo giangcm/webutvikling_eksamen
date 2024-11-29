@@ -298,19 +298,16 @@
       <!-- Hopp til toppen -->
       <a href="index.html" class="back-to-top" aria-label="Hopp til toppen">↑</a>
       <script>
-          // Lấy phần tử nút "back-to-top"
           const backToTopButton = document.querySelector('.back-to-top');
       
-          // Kiểm tra vị trí cuộn để hiện/ẩn nút
           window.addEventListener('scroll', () => {
-              if (window.scrollY > 300) { // Hiển thị nút nếu cuộn xuống hơn 300px
+              if (window.scrollY > 300) { 
                   backToTopButton.classList.add('show');
               } else {
                   backToTopButton.classList.remove('show');
               }
           });
       
-          // Cuộn về đầu trang khi nhấp vào nút
           backToTopButton.addEventListener('click', (e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
